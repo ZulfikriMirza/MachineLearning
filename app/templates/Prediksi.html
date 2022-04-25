@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h1>Prediksi Page</h1>
+    <form method="POST" action="">
+        {{ forms_real.hidden_tag() }}
+        {{ forms_real.a.label }}
+        {{ forms_real.a }}
+        {{ forms_real.b.label }}
+        {{ forms_real.b }}
+        {{ forms_real.c.label }}
+        {{ forms_real.c }}
+        {{ forms_real.d.label }}
+        {{ forms_real.d }}
+        {{ forms_real.submit }}
+    </form>
+    <h2>{{ y_pred }}</h2>
+    <p>a = Sepal Length in cm </p>
+    <p>b = sepal width in cm </p>
+    <p>c = Petal length in cm </p>
+    <p>d = Petal width in cm</p>
+
+{% endblock content %}

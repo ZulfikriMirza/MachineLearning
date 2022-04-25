@@ -1,0 +1,6 @@
+{% extends "layout.html" %}
+{% block content %}
+        <img id="gambar" src = "{{url_for('static', filename='grafik.png')}}">
+        <a id="button" href="{{ url_for('prediksi')}}">Prediksi</a>
+        <h2>{{ y_pred }}</h2>
+{% endblock content %}

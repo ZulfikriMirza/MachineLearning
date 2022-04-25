@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div>
+        <h1 class="border-bottom mb-2">Machine Learning</h1>
+        <h3 class="mb-3">Teori Dasar</h3>
+            <li>Machine Learning</li>
+                <p class="Kepala">Machine Learning merupakan salah satu cabang dari disiplin ilmu Kecerdasan Buatan (Artificial Intellegence)
+                    yang membahas mengenai pembangunan sistem yang berdasarkan pada data.</p>
+            <li>Learning Vector Quantization</li>
+                <p class="Kepala">Metode learning vector quantization dibuat oleh Teuvo Kohonen dan timnya pada tahun 1986.
+                    Algoritma LVQ pertama (LVQ1) yang mempelajari seperangkat prototipe dari data pelatihan didasarkan pada heuristik
+                    dan mengimplementasikan langkah-langkah pembelajaran bahasa Ibrani. Kohonen juga mengusulkan tingkat pembelajaran LVQ(OLVQ1)
+                    dan LVQ2.1 yang dioptimalkan, dua skema pelatihan alternatif (heuristik) yang bertujuan untuk meningkatkan algoritma
+                    sehubungan dengan konvergensi yang lebih cepat dan perkiraan yang lebih baik dari batas keputusan Bayesian.</p>
+            <li>Algoritma Metode</li>
+                <ol>
+                    <li>Inisialisasi bobot wj dan derajat pembelajaran α</li>
+                    <li>Selama kondisi berhenti masih salah, kerjakan langkah 2 sampai 6</li>
+                    <li>Untuk setiap vektor masukan pelatihan x kerjakan langkah 3-4</li>
+                    <li>Temukan j sehingga |x-wj| minimum</li>
+                    <li>Perbaharui wj sebagai berikut :  Jika T = Cj maka    Wj(t+1) = wj (t) + α (t)[x(t) – wj(t)] (2.1)
+Jika T≠Cj maka    Wj(t+1) = wj (t) - α (t)[x(t) – wj(t)]
+</li>
+                    <li>Kurangi rerata pembelajaran α  </li>
+                    <li>Tes kondisi berhenti dengan, X, vektor-vektor pelatihan (X1,…Xi,…Xn). T,
+                        kategori atau kelas yg benar untuk vector vektor pelatihan Wj, vektor bobot pada unit keluaran ke-j (W1j,…Wij,…,Wnj). Cj,
+                        kategori atau kelas yang merepresentasikan oleh unit keluaran ke-j. ||x-wj||,
+                        jarak Euclidean antara vektor masukan dan vektor bobot untuk unit keluaran ke-j.</li>
+                </ol>
+
+        <h3 class="mb-3">Dataset</h3>
+            <p>Berikut adalah tabel dataset yang akan diuji</p>
+            <li>Dataset bunga Iris</li>
+            {% for table in tables %}
+                        {{ table|safe }}
+            {% endfor %}
+
+        <h1>    </h1>
+        <h1>    </h1>
+        <h1>    </h1>
+        <a id="button" type="submit" href="{{ url_for('createmodel')}}">Run the method</a>
+        <h1>    </h1>
+        <h1>    </h1>
+        <h1>    </h1>
+    </div>
+
+{% endblock content %}
